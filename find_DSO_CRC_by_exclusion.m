@@ -1,4 +1,4 @@
-function polynomial=find_best_CRC_by_exclusion(constraint_length,code_generator,d_tilde,k, m)
+function polynomial=find_DSO_CRC_by_exclusion(constraint_length,code_generator,d_tilde,k, m)
 % 
 % 
 % 
