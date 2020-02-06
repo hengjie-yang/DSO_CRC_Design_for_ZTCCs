@@ -7,7 +7,7 @@ Design steps
  
 Notes:
   1. Please refer to the input/output specifications inside each .m file
-  2. Typically, we would choose d_tilde in between $2d_{free}$ and 3*d_free.
+  2. Typically, we would choose d_tilde in between 2*d_free and 3*d_free.
   3. Current program only considers at most double undetectable error events. If the desired CRC degree is too large, one needs to consider triple or n-tuple (n>2) undetectable error events.
 
 Reference:
