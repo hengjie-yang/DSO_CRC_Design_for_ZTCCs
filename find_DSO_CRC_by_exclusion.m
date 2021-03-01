@@ -1,4 +1,4 @@
-function polynomial=find_DSO_CRC_by_exclusion(constraint_length,code_generator,d_tilde,k, m)
+function polynomial=find_DSO_CRC_by_exclusion(constraint_length,code_generator,d_tilde,k, m, base)
 % 
 % 
 % 
@@ -28,6 +28,10 @@ function polynomial=find_DSO_CRC_by_exclusion(constraint_length,code_generator,d
 % if ~exist('error_event','var')
 %     [error_event,error_weight]=find_dominant_error_event(constraint_length,code_generator,d_tilde);
 % end
+
+if nargin < 6
+    base = 16;
+end
 
 
 load(['error_event_',num2str(constraint_length),'_',num2str(code_generator),'_',num2str(d_tilde),'.mat'],'error_event','error_event_length');
@@ -102,7 +106,8 @@ for dist = dfree:d_tilde
     end
     
     if num > 0
-        disp(['The undetectable minimum distance: ',num2str(dist)]);
+        disp(['    The DSO CRC polynomial in ', num2str(base),': ',dec2base(base2dec(candidate_polynomial(opt_location,:), 8), base)]);
+        disp(['    The undetectable minimum distance: ',num2str(dist)]);
         flag = 1;
         break
     end      
